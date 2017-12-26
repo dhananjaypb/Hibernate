@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- SQL Dialect -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</property>
+
+		<!-- Database Connection Settings -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>						<!-- Schema for inheretance -->
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Mapping?useSSL=false</property>  <!-- Inheritance -->
+		<property name="hibernate.connection.username">root</property>											
+		<property name="hibernate.connection.password">0007</property>
+		<property name="hibernate.hbm2ddl.auto">create-drop</property>
+		<!-- To show SQL queries fired in db -->
+		<property name="show_sql">true</property>
+
+		<!-- Specifying Session Context -->
+		<property name="hibernate.current_session_context_class">thread</property>
+
+		<!-- Mapping With Model Class Containing Annotations -->
+		<!-- For Inheritance hibernate -->
+		<!-- <mapping class="com.hibernate.inheritance.Parent" />
+		<mapping class="com.hibernate.inheritance.Child" /> -->
+				<!-- mapping for one to one -->
+		<!-- <mapping class="com.hibernate.mapping.Employee"/>
+		<mapping class="com.hibernate.mapping.Address"/>
+ -->		
+		<mapping class="com.hibernate.mapping.Student"/>
+		<mapping class="com.hibernate.mapping.Subject"/>
+		</session-factory>
+</hibernate-configuration>
